@@ -20,7 +20,7 @@
     .manifesto{background:#2b2a25;color:var(--paper);padding:100px 0;text-align:center;position:relative;overflow:hidden}.manifesto:before,.manifesto:after{content:"✳";position:absolute;color:rgba(233,225,213,.13);font-size:170px;top:20px}.manifesto:before{left:7%}.manifesto:after{right:7%;top:auto;bottom:-30px}.manifesto .eyebrow{color:#c1a78b}.manifesto blockquote{font:400 clamp(36px,5.4vw,68px)/1.15 var(--serif);max-width:900px;margin:25px auto 20px;letter-spacing:-.03em}.manifesto blockquote em{color:#c1a78b}.manifesto p{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#b6b0a5}
     .works{background:var(--cream)}.gallery{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:230px 230px;gap:14px}.gallery figure{margin:0;overflow:hidden;position:relative}.gallery figure:first-child{grid-row:span 2}.gallery img{height:100%;transition:transform .8s}.gallery figure:hover img{transform:scale(1.045)}.gallery figcaption{position:absolute;bottom:15px;left:17px;color:white;font-size:9px;letter-spacing:.17em;text-transform:uppercase;text-shadow:0 1px 8px #222}
     .masters-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.masters-photo{height:500px;position:relative}.masters-photo img{height:100%;object-position:center 30%}.masters-text h2{font:400 clamp(43px,5.5vw,70px)/1 var(--serif);letter-spacing:-.04em;margin:16px 0 25px}.masters-text p{max-width:430px;color:var(--muted);font-size:14px;line-height:2}.masters-caption{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:28px}
-    .contact{background:var(--cream);padding:100px 0}.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.contact h2{font:400 clamp(52px,7vw,88px)/.95 var(--serif);letter-spacing:-.05em;margin:15px 0 25px}.contact p{font-size:14px;line-height:1.9;color:var(--muted);max-width:390px}.contact-card{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}.contact-row{display:flex;justify-content:space-between;gap:20px;padding:12px 0;font-size:12px}.contact-row span:first-child{color:var(--muted)}.contact-row span:last-child{text-align:right}.contact-hint{font-size:10px!important;letter-spacing:.08em;text-transform:uppercase;margin-top:18px}
+    .contact{background:var(--cream);padding:100px 0}.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.contact h2{font:400 clamp(52px,7vw,88px)/.95 var(--serif);letter-spacing:-.05em;margin:15px 0 25px}.contact p{font-size:14px;line-height:1.9;color:var(--muted);max-width:390px}.contact-card{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}.contact-row{display:flex;justify-content:space-between;gap:20px;padding:12px 0;font-size:12px}.contact-row span:first-child{color:var(--muted)}.contact-row span:last-child{text-align:right}.contact-row a{color:var(--ink);border-bottom:1px solid rgba(155,128,100,.45);padding-bottom:2px;transition:color .2s}.contact-row a:hover{color:var(--accent)}
     footer{background:var(--ink);color:var(--paper);padding:35px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{font:400 22px var(--serif);letter-spacing:.12em}.footer-note{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#aaa398}.back-top{font-size:10px;letter-spacing:.14em;text-transform:uppercase}
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}.spark{position:absolute;width:5px;height:5px;background:#c5a783;transform:rotate(45deg);opacity:.8;box-shadow:0 0 12px #c5a783;animation:twinkle 3.4s infinite ease-in-out}.spark.s1{top:18%;right:8%}.spark.s2{top:66%;left:4%;animation-delay:1.2s}.spark.s3{bottom:12%;right:13%;animation-delay:2s}@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6) rotate(45deg)}50%{opacity:.9;transform:scale(1.3) rotate(45deg)}}
     @media(max-width:900px){.shell{width:min(100% - 42px,700px)}.hero{min-height:0;grid-template-columns:1fr 1fr;gap:28px;padding:55px 0 65px}.hero-copy{padding-left:0}.hero-visual{height:480px;margin-right:8px}.hero h1{font-size:clamp(54px,8vw,78px)}.services-grid{grid-template-columns:repeat(2,1fr)}.service-card,.service-card img{min-height:320px;height:320px}.section{padding:82px 0}.gallery{grid-template-rows:190px 190px}.masters-photo{height:420px}.nav-links{gap:18px}}
@@ -93,7 +93,7 @@
       <div class="shell">
         <div class="section-head reveal">
           <div><div class="eyebrow">Вдохновение и детали</div><h2>Атмосфера</h2></div>
-          <p>Немного красоты, фактур и настроения. Галерею работ можно будет пополнять новыми фотографиями.</p>
+          <p>Немного красоты, фактур и настроения. Здесь собраны детали образов и атмосферы нашего пространства.</p>
         </div>
         <div class="gallery">
           <figure class="reveal"><img loading="lazy" decoding="async" src="images/slides/slide5.jpg" alt="Атмосфера салона"><figcaption>Пространство</figcaption></figure>
@@ -122,14 +122,17 @@
         <div class="reveal">
           <div class="eyebrow">Будем знакомы</div>
           <h2>Загляни<br><em>к нам.</em></h2>
-          <p>Есть вопрос или хотите уточнить услугу? Свяжитесь с нами удобным способом — мы добавим актуальные контакты и адрес после подтверждения данных.</p>
-          <a class="round-link" href="#services">Посмотреть услуги <span>↗</span></a>
+          <p>Будем рады видеть вас! Позвоните нам или напишите в удобной соцсети, чтобы договориться о визите.</p>
+          <a class="round-link" href="https://www.google.com/maps/dir/?api=1&destination=45.0536065%2C38.9505459" target="_blank" rel="noopener">Построить маршрут <span>↗</span></a>
         </div>
         <div class="contact-card reveal">
-          <div class="contact-row"><span>Запись</span><span>Скоро появится</span></div>
-          <div class="contact-row"><span>Адрес</span><span>Уточняется</span></div>
-          <div class="contact-row"><span>График</span><span>Уточняется</span></div>
-          <p class="contact-hint">Контактные данные будут добавлены после согласования</p>
+          <div class="contact-row"><span>Адрес</span><span><a href="https://www.google.com/maps/dir/?api=1&destination=45.0536065%2C38.9505459" target="_blank" rel="noopener">ул. Гагарина, 132, Краснодар ↗</a></span></div>
+          <div class="contact-row"><span>Телефон</span><span><a href="tel:+79182529384">+7 (918) 252-93-84</a></span></div>
+          <div class="contact-row"><span>Дополнительный</span><span><a href="tel:+79180157571">+7 (918) 015-75-71</a></span></div>
+          <div class="contact-row"><span>WhatsApp</span><span><a href="https://wa.me/79182529384" target="_blank" rel="noopener">Написать ↗</a></span></div>
+          <div class="contact-row"><span>ВКонтакте</span><span><a href="https://vk.com/elli_sol" target="_blank" rel="noopener">Открыть ↗</a></span></div>
+          <div class="contact-row"><span>Instagram</span><span><a href="https://www.instagram.com/slli_soll/" target="_blank" rel="noopener">Открыть ↗</a></span></div>
+          <div class="contact-row"><span>Facebook</span><span><a href="https://www.facebook.com/elina.khoshabova" target="_blank" rel="noopener">Открыть ↗</a></span></div>
         </div>
       </div>
     </section>
