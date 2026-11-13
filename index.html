@@ -1,307 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;500;600&family=Gabriela&display=swap" rel="stylesheet">
-    <title>Я с Тобой</title>
-
-    <link rel="stylesheet" href="css/style.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f0e9">
+  <meta name="description" content="Парикмахерская «Я с тобой». Стрижки, окрашивание и уход за волосами.">
+  <title>Я с тобой — пространство красоты</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f4f0e9;--cream:#e9e1d5;--ink:#282722;--muted:#77736b;--line:rgba(40,39,34,.17);--accent:#9b8064;--white:#fffdfa;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;width:100%;object-fit:cover}button{font:inherit}.shell{width:min(1240px,calc(100% - 64px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700}.serif{font-family:var(--serif);font-weight:400}.section{padding:112px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}.section-head h2{font:400 clamp(42px,6vw,76px)/.98 var(--serif);letter-spacing:-.045em;margin:14px 0 0}.section-head p{max-width:310px;color:var(--muted);font-size:13px;line-height:1.8;margin:0 0 5px}
+    .topline{height:34px;background:var(--ink);color:#e9e1d5;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+    header{position:relative;z-index:5}.nav{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.nav-links{display:flex;gap:32px;align-items:center}.nav-links a,.nav-cta{font-size:11px;letter-spacing:.08em;text-transform:uppercase}.nav-links a{color:#5e5a53;transition:color .25s}.nav-links a:hover{color:var(--accent)}.brand{position:absolute;left:50%;transform:translateX(-50%);text-align:center;white-space:nowrap}.brand-name{font:500 25px/.9 var(--serif);letter-spacing:.13em}.brand-sub{font-size:8px;letter-spacing:.32em;text-transform:uppercase;margin-top:7px;color:var(--muted)}.nav-cta{border:1px solid var(--ink);padding:13px 18px;transition:.25s}.nav-cta:hover{background:var(--ink);color:var(--paper)}.menu-toggle{display:none;border:0;background:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .hero{min-height:690px;display:grid;grid-template-columns: .92fr 1.08fr;align-items:center;gap:4vw;padding:54px 0 70px}.hero-copy{padding:24px 0 24px 5.5vw;position:relative;z-index:1}.hero-kicker{display:flex;align-items:center;gap:13px;margin-bottom:26px}.hero-kicker:before{content:"";width:36px;height:1px;background:var(--accent)}.hero h1{font:400 clamp(58px,7vw,100px)/.91 var(--serif);letter-spacing:-.055em;margin:0;max-width:600px}.hero h1 em{font-weight:400;color:var(--accent)}.hero-desc{max-width:330px;color:var(--muted);font-size:14px;line-height:1.9;margin:30px 0}.round-link{display:inline-flex;align-items:center;gap:18px;font-size:10px;text-transform:uppercase;letter-spacing:.16em;border-bottom:1px solid var(--accent);padding:0 0 12px}.round-link span{font-size:19px;transition:transform .25s}.round-link:hover span{transform:translateX(6px)}.hero-note{margin-top:70px;font:italic 14px var(--serif);color:var(--muted)}.hero-visual{height:590px;position:relative;margin-right:2vw}.hero-photo{height:100%;width:100%;object-fit:cover;object-position:center 36%;}.hero-frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(155,128,100,.65);pointer-events:none}.hero-stamp{position:absolute;bottom:35px;left:-40px;width:116px;height:116px;border-radius:50%;background:var(--accent);color:var(--white);display:grid;place-items:center;text-align:center;font:italic 17px/1.15 var(--serif);transform:rotate(-10deg);padding:20px}
+    .intro{background:var(--cream);padding:92px 0}.intro-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:10vw;align-items:center}.intro-mark{font:400 clamp(45px,6vw,75px)/1 var(--serif);letter-spacing:-.04em}.intro-mark em{color:var(--accent)}.intro-copy{max-width:500px}.intro-copy p{font-size:14px;line-height:2;color:#666157;margin:0 0 24px}.intro-copy .signature{font:italic 25px var(--serif);color:var(--ink)}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service-card{position:relative;min-height:350px;background:#ddd3c5;overflow:hidden}.service-card img{height:350px;transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(.82)}.service-card:hover img{transform:scale(1.055)}.service-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(22,21,18,.72))}.service-info{position:absolute;z-index:1;left:22px;right:18px;bottom:22px;color:white}.service-info small{font-size:9px;letter-spacing:.18em;text-transform:uppercase;opacity:.8}.service-info h3{font:400 27px var(--serif);margin:7px 0}.service-info span{font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+    .manifesto{background:#2b2a25;color:var(--paper);padding:100px 0;text-align:center;position:relative;overflow:hidden}.manifesto:before,.manifesto:after{content:"✳";position:absolute;color:rgba(233,225,213,.13);font-size:170px;top:20px}.manifesto:before{left:7%}.manifesto:after{right:7%;top:auto;bottom:-30px}.manifesto .eyebrow{color:#c1a78b}.manifesto blockquote{font:400 clamp(36px,5.4vw,68px)/1.15 var(--serif);max-width:900px;margin:25px auto 20px;letter-spacing:-.03em}.manifesto blockquote em{color:#c1a78b}.manifesto p{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#b6b0a5}
+    .works{background:var(--cream)}.gallery{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:230px 230px;gap:14px}.gallery figure{margin:0;overflow:hidden;position:relative}.gallery figure:first-child{grid-row:span 2}.gallery img{height:100%;transition:transform .8s}.gallery figure:hover img{transform:scale(1.045)}.gallery figcaption{position:absolute;bottom:15px;left:17px;color:white;font-size:9px;letter-spacing:.17em;text-transform:uppercase;text-shadow:0 1px 8px #222}
+    .masters-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.masters-photo{height:500px;position:relative}.masters-photo img{height:100%;object-position:center 30%}.masters-text h2{font:400 clamp(43px,5.5vw,70px)/1 var(--serif);letter-spacing:-.04em;margin:16px 0 25px}.masters-text p{max-width:430px;color:var(--muted);font-size:14px;line-height:2}.masters-caption{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:28px}
+    .contact{background:var(--cream);padding:100px 0}.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}.contact h2{font:400 clamp(52px,7vw,88px)/.95 var(--serif);letter-spacing:-.05em;margin:15px 0 25px}.contact p{font-size:14px;line-height:1.9;color:var(--muted);max-width:390px}.contact-card{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}.contact-row{display:flex;justify-content:space-between;gap:20px;padding:12px 0;font-size:12px}.contact-row span:first-child{color:var(--muted)}.contact-row span:last-child{text-align:right}.contact-hint{font-size:10px!important;letter-spacing:.08em;text-transform:uppercase;margin-top:18px}
+    footer{background:var(--ink);color:var(--paper);padding:35px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{font:400 22px var(--serif);letter-spacing:.12em}.footer-note{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#aaa398}.back-top{font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}.spark{position:absolute;width:5px;height:5px;background:#c5a783;transform:rotate(45deg);opacity:.8;box-shadow:0 0 12px #c5a783;animation:twinkle 3.4s infinite ease-in-out}.spark.s1{top:18%;right:8%}.spark.s2{top:66%;left:4%;animation-delay:1.2s}.spark.s3{bottom:12%;right:13%;animation-delay:2s}@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6) rotate(45deg)}50%{opacity:.9;transform:scale(1.3) rotate(45deg)}}
+    @media(max-width:900px){.shell{width:min(100% - 42px,700px)}.hero{min-height:0;grid-template-columns:1fr 1fr;gap:28px;padding:55px 0 65px}.hero-copy{padding-left:0}.hero-visual{height:480px;margin-right:8px}.hero h1{font-size:clamp(54px,8vw,78px)}.services-grid{grid-template-columns:repeat(2,1fr)}.service-card,.service-card img{min-height:320px;height:320px}.section{padding:82px 0}.gallery{grid-template-rows:190px 190px}.masters-photo{height:420px}.nav-links{gap:18px}}
+    @media(max-width:640px){.shell{width:calc(100% - 38px)}.topline{font-size:8px;letter-spacing:.13em}.nav{height:72px}.brand-name{font-size:21px}.brand-sub{font-size:7px}.menu-toggle{display:block;z-index:2}.nav-cta{padding:10px 11px;font-size:9px}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:22px 20px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:22px}.nav-links.open{display:flex}.nav-links a{font-size:12px}.brand{left:50%;}.hero{display:flex;flex-direction:column;align-items:stretch;padding:46px 0 56px;gap:34px}.hero-copy{padding:0}.hero h1{font-size:clamp(58px,15vw,84px)}.hero-desc{margin:22px 0}.hero-note{margin-top:35px}.hero-visual{height:440px;margin:0 10px 0 0}.hero-stamp{width:90px;height:90px;left:-15px;bottom:22px;font-size:14px}.section{padding:72px 0}.section-head{display:block;margin-bottom:30px}.section-head p{margin-top:18px}.section-head h2{font-size:52px}.intro{padding:68px 0}.intro-grid,.masters-grid,.contact-inner{grid-template-columns:1fr;gap:32px}.intro-mark{font-size:54px}.services-grid{gap:10px}.service-card,.service-card img{height:260px;min-height:260px}.service-info{left:14px;bottom:15px}.service-info h3{font-size:22px}.service-info small{font-size:8px}.service-info span{font-size:8px}.manifesto{padding:76px 18px}.manifesto:before,.manifesto:after{font-size:90px}.manifesto blockquote{font-size:39px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 160px 160px;gap:9px}.gallery figure:first-child{grid-row:span 2}.gallery figure:last-child{grid-column:span 2}.masters-photo{height:380px;order:2}.masters-text{order:1}.contact{padding:72px 0}.contact h2{font-size:62px}.footer-inner{flex-direction:column;text-align:center}.footer-note{line-height:1.8}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
-
 <body>
+  <div class="topline">Пространство, где красота начинается с внимания к себе</div>
+  <header>
+    <div class="shell nav">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Меню</button>
+      <nav class="nav-links" id="main-menu" aria-label="Основная навигация">
+        <a href="#about">О нас</a><a href="#services">Услуги</a><a href="#works">Работы</a>
+      </nav>
+      <a class="brand" href="#" aria-label="Я с тобой — на главную"><div class="brand-name">Я С ТОБОЙ</div><div class="brand-sub">пространство красоты</div></a>
+      <a class="nav-cta" href="#contacts">Связаться <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
 
+  <main>
+    <section class="shell hero">
+      <div class="hero-copy">
+        <div class="hero-kicker eyebrow">Красота в твоём ритме</div>
+        <h1>Быть собой —<br><em>это красиво.</em></h1>
+        <p class="hero-desc">Место, где забота о себе становится приятным ритуалом. Волосы, настроение и немного времени только для себя.</p>
+        <a class="round-link" href="#services">Открыть пространство <span>↘</span></a>
+        <div class="hero-note">«Красота — в деталях. Уверенность — в ощущениях».</div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-photo" src="images/header%20image/logan-weaver-DwiHf5nS_fQ-unsplash.jpg" alt="Атмосферный образ и работа стилиста">
+        <div class="hero-frame"></div><div class="hero-stamp">время<br>для себя</div>
+        <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i>
+      </div>
+    </section>
 
-    <div class="wrapper">
-        <header class="header">
-            <div class="container">
-                <!-- Меню -->
-                <div class="header__inner">
-                    <nav class="menu">
-                        <ul class="menu__list">
-                            <!-- <li class="menu__list-item">
-                                <a class="menu__list-telephone" href="tel:+79182529384">+7-918-252-93-84</a>
-                            </li> -->
-                            <li class="menu__list-item">
-                                <a class="menu__list-link" href="#about">О мастерской</a>
-                            </li>
-                            <li class="menu__list-item">
-                                <a class="menu__list-link" href="#services">Услуги</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <a class="logo" href="#"><img src="images/logo.png" alt="logo" class="logo__img">
-                    </a>
-
-                    <nav class="menu">
-                        <ul class="menu__list">
-                            <li class="menu__list-item">
-                                <a class="menu__list-link" href="#works">Работы</a>
-                            </li>
-                            <li class="menu__list-item">
-                                <a class="menu__list-link" href="#contacts">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <button class="header__btn"><img src="images/Бургер.svg" alt="burger__menu"></button>
-                </div>
-                <!-- Контент Главная -->
-                <div id="about" class="header__content">
-                    <h1 class="header__title">*А ты со мной?</h1>
-                    <img src="images/header__img.png" alt="header__image" class="header__content-img">
-                    <div class="header__about">
-                        <h2 class="header__about-name">Меня зовут Элина </h2>
-                        <p class="header__about-text">И я владею парикмахерской с 1999 года. Недавно мы закончили реконструкцию. <br>Приглашаю на чашечку ароматного кофе</p>
-                        <button class="header__about-btn"><a class="header__about-tel" href="tel:+79182529384">Хочу
-                                кофе!</a></button>
-                    </div>
-                </div>
-                <img src="images/ScrollDown.svg" alt="scroll" class="header__scroll">
-            </div>
-        </header>
-
-
-        <div class="wrapper">
-
-            <div class="container">
-                <section id="services" class="services">
-                    <div class="services__content">
-                        <div class="services__title">
-                            <a href="#" class="services__title-text">Услуги</a>
-                        </div>
-
-
-
-                        <nav class="price">
-                            <ul class="price__list">
-                                <li class="services__item-1 price__list-man">
-                                    <img src="images/services__mencut.png" alt="mencut" class="services__item-img-1">
-                                    <a href="#" class="services__item-text-1 price__list-link">Мужские</a>
-                                    <span class="menu__arrow-1 arrow"></span>
-                                    <ul class="sub-price__list-1">
-                                        <li class="sub-price__list-item">Стрижка мужская <span class="sub-price__list-coast">350р</span></li>
-                                        <li class="sub-price__list-item">Стрижка под насадку <span class="sub-price__list-coast">250р</span></li>
-                                </li>
-                                <li class="sub-price__list-item">Стрижка бороды <span class="sub-price__list-coast">200р</span></li>
-                                <li class="sub-price__list-item">Стрижка детская <span class="sub-price__list-coast">250р</span></li>
-                                <li class=" sub-price__list-item">Половина стрижки <span class="sub-price__list-coast">200р</span></li>
-                                </ul>
-
-                                </li>
-                                <li class=" services__item-2 price__list-woman">
-                                    <img src="images/services__womencut.png" alt="womencut" class="services__item-img-2">
-                                    <a href="#" class="services__item-text-2 price__list-link">Женские</a>
-                                    <span class="menu__arrow-2 arrow"></span>
-                                    <ul class="sub-price__list-2">
-                                        <li class="sub-price__list-item">Стрижка женская <span class="sub-price__list-coast">400р</span></li>
-                                        <li class="sub-price__list-item">Укладка волос <span class="sub-price__list-coast">500р</span></li>
-                                        <li class="sub-price__list-item">Стрижка детская <span class="sub-price__list-coast">250р</span></li>
-                                        <li class="sub-price__list-item">Сушка волос <span class="sub-price__list-coast">100р</span></li>
-                                        <li class="sub-price__list-item">Мытьё головы <span class="sub-price__list-coast">100р</span></li>
-                                    </ul>
-                                </li>
-                                <li class="services__item-3 price__list-hairstyles">
-                                    <img src="images/services__hairstyles.png" alt="hairstyles" class="services__item-img-3">
-                                    <a href="#" class="services__item-text-3 price__list-link">Причёски</a>
-                                    <span class="menu__arrow-1 arrow"></span>
-                                    <ul class="sub-price__list-1">
-                                        <li class="sub-price__list-item">Средняя длина <span class="sub-price__list-coast">350р</span></li>
-                                        <li class="sub-price__list-item">Накрутка на плойку <span class="sub-price__list-coast">800р</span></li>
-                                        <li class="sub-price__list-item">Окраска волос <span class="sub-price__list-coast">400р</span></li>
-                                        <li class="sub-price__list-item">Мелирование волос <span class="sub-price__list-coast">1000</span>р</li>
-                                        <li class="sub-price__list-item">Плетение косички <span class="sub-price__list-coast">200р</span></li>
-                                    </ul>
-                                </li>
-                                <li class="services__item-4 price__list-nail">
-                                    <img src="images/services__nail.png" alt="nail" class="services__item-img-4">
-                                    <a href="#" class="services__item-text-4 price__list-link">Ногти</a>
-                                    <span class="menu__arrow-2 arrow"></span>
-                                    <ul class="sub-price__list-2">
-                                        <li class="sub-price__list-item">Маникюр женский <span class="sub-price__list-coast">300р</span></li>
-                                        <li class="sub-price__list-item">Маникюр мужской <span class="sub-price__list-coast">250р</span></li>
-                                        <li class="sub-price__list-item">Педикюр женский <span class="sub-price__list-coast">600р</span></li>
-                                        <li class="sub-price__list-item">Педикюр мужской <span class="sub-price__list-coast">750р</span></li>
-                                        <li class="sub-price__list-item">Окраска бровей <span class="sub-price__list-coast">200р</span></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                </section>
-
-            </div>
-
+    <section class="intro" id="about">
+      <div class="shell intro-grid">
+        <div class="intro-mark reveal">Не просто<br><em>стрижка.</em><br>Твоё время.</div>
+        <div class="intro-copy reveal">
+          <div class="eyebrow">О пространстве</div>
+          <p>Мы верим, что хороший результат начинается с диалога. Важно услышать ваши пожелания, подобрать подходящий образ и сделать так, чтобы после визита вы чувствовали себя собой — только ещё увереннее.</p>
+          <p>Без спешки и лишнего шума. С вниманием к деталям, индивидуальности и вашему настроению.</p>
+          <div class="signature">Рады видеть вас.</div>
         </div>
+      </div>
+    </section>
 
+    <section class="section shell" id="services">
+      <div class="section-head reveal">
+        <div><div class="eyebrow">Что мы делаем</div><h2>Услуги</h2></div>
+        <p>Подбираем решения под ваш стиль, привычки и пожелания. Подробности и стоимость можно уточнить перед визитом.</p>
+      </div>
+      <div class="services-grid">
+        <a class="service-card reveal" href="#contacts"><img src="images/WoomanCut.png" alt="Женская стрижка"><div class="service-info"><small>Форма и характер</small><h3>Женские стрижки</h3><span>Подробнее ↗</span></div></a>
+        <a class="service-card reveal" href="#contacts"><img src="images/MenCut.png" alt="Мужская стрижка"><div class="service-info"><small>Точность в деталях</small><h3>Мужские стрижки</h3><span>Подробнее ↗</span></div></a>
+        <a class="service-card reveal" href="#contacts"><img src="images/HairStyles.png" alt="Укладка волос"><div class="service-info"><small>Образ для момента</small><h3>Укладки</h3><span>Подробнее ↗</span></div></a>
+        <a class="service-card reveal" href="#contacts"><img src="images/Nails.png" alt="Уход за руками"><div class="service-info"><small>Аккуратный акцент</small><h3>Уход за руками</h3><span>Подробнее ↗</span></div></a>
+      </div>
+    </section>
 
-        <div class="wrapper">
+    <section class="manifesto">
+      <div class="eyebrow">Твоя индивидуальность — главное</div>
+      <blockquote>Не нужно быть <em>идеальной.</em><br>Достаточно быть собой.</blockquote>
+      <p>Я С ТОБОЙ · ПРОСТРАНСТВО КРАСОТЫ</p>
+    </section>
 
-            <section class="works">
-                <div class="container">
-                    <div id="works" class="works__content">
-                        <div class="works__title">
-                            <a href="#" class="works__title-text">Работы</a>
-                        </div>
-                    </div>
-
-
-
-                    <div id="slider">
-                        <input type="radio" name="slider" id="slide1" checked>
-                        <input type="radio" name="slider" id="slide2">
-                        <input type="radio" name="slider" id="slide3">
-                        <input type="radio" name="slider" id="slide4">
-                        <div id="slides">
-                            <div id="overflow">
-                                <div class="inner">
-                                    <div class="slide slide_1">
-                                        <div class="slide-content">
-
-                                            <p><img src="./images/slides/slider1.jpg" alt="slide1"></p>
-                                        </div>
-                                    </div>
-                                    <div class="slide slide_2">
-                                        <div class="slide-content">
-                                            <p><img src="./images/slides/slider2.jpg" alt="slide2"></p>
-                                        </div>
-                                    </div>
-                                    <div class="slide slide_3">
-                                        <div class="slide-content">
-                                            <p><img src="./images/slides/slider3.jpg" alt="slide3"></p>
-                                        </div>
-                                    </div>
-                                    <div class="slide slide_4">
-                                        <div class="slide-content">
-                                            <p><img src="./images/slides/slider4.jpg" alt="slide4"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="controls">
-                            <label for="slide1"></label>
-                            <label for="slide2"></label>
-                            <label for="slide3"></label>
-                            <label for="slide4"></label>
-                        </div>
-                        <div id="bullets">
-                            <label for="slide1"></label>
-                            <label for="slide2"></label>
-                            <label for="slide3"></label>
-                            <label for="slide4"></label>
-                        </div>
-                    </div>
-                </div>
+    <section class="works section" id="works">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Вдохновение и детали</div><h2>Атмосфера</h2></div>
+          <p>Немного красоты, фактур и настроения. Галерею работ можно будет пополнять новыми фотографиями.</p>
         </div>
-        </section>
-
-
-    </div>
-
-    <div class="wrapper">
-
-        <section class="vacancies">
-            <div class="container">
-                <div class="vacancies__inner">
-                    <div class="vacancies__title">
-                        <a href="#" class="vacancies__title-text">Вакансии</a>
-                    </div>
-                    <div class="vacancies__stars">
-                        <div class="vacancies__star"></div>
-                        <div class="vacancies__line">
-                        </div>
-                    </div>
-                    <div class="vacancies__info">
-                        <p class="vacancies__info-text">
-                            Мы всегда в поисках талантов. Если ты любишь дарить людям новый стиль, Если ты со страстью в глазах берёшь в руки ножницы, Тогда мы приглашаем тебя в нашу семью!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    </div>
-    <div class="wrapper">
-
-        <section class="contacts">
-            <div class="container">
-                <div id="contacts" class="contacts__inner">
-                    <p class="contacts__title">
-                        Найти нас просто!
-                    </p>
-                    <div class="contacts__info">
-
-                        <div class="contacts__map">
-                            <a href="https://www.google.ru/maps/dir//45.0536065,38.9505459/@45.0532967,38.9502651,18.5z/data=!4m2!4m1!3e0" class="contacts__map--address">ул.Гагарина 132 <br> <span class="contacts__map--address-street">г.Краснодар</span></a>
-                            <a href="https://www.google.ru/maps/dir//45.0536065,38.9505459/@45.0532967,38.9502651,18.5z/data=!4m2!4m1!3e0">
-                                <img src="./images/Map.jpg" alt="map" class="map__img">
-                            </a>
-
-                        </div>
-
-                        <div class="contacts__social-content">
-                            <p class="contacts__social-title">Посети наши соц.сети!</p>
-                            <ul class="contacts__social">
-                                <li class="contacts__social-item">
-                                    <a href="https://wa.me/79182529384" class="contacts__social-link"><img src="images/svg/whatsappbig.svg" alt="social__image" class="contacts__social-img"></a>
-                                </li>
-                                <li class="contacts__social-item">
-                                    <a href="https://vk.com/elli_sol" class="contacts__social-link"><img src="images/svg/vkbig.svg" alt="social__image" class="contacts__social-img"></a>
-                                </li>
-                                <li class="contacts__social-item">
-                                    <a href="https://www.facebook.com/elina.khoshabova" class="contacts__social-link"><img src="images/svg/facebookbig.svg" alt="social__image" class="contacts__social-img"></a>
-                                </li>
-                                <li class="contacts__social-item">
-                                    <a href="https://www.instagram.com/slli_soll/" class="contacts__social-link"><img src="images/svg/instagrambig.svg" alt="social__image" class="contacts__social-img"></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="contacts__tel">
-                            <p class="contacts__tel-title">Или просто <br>позвони</p>
-                            <a class="contacts__tel-tel" href="tel:+79182529384">+7-918-252-93-84</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="container">
-                <div class="footer__inner">
-                    <a class="footer__telephone" href="tel:+79180157571">+7-918-015-75-71</a>
-                    <a href="#" class="footer__logo"><img src="images/footer__logo.png" alt="logo" class="footer__logo-img"></a>
-                    <ul class="footer__social">
-                        <li class="footer__social-item">
-                            <a href="https://wa.me/79182529384" class="footer__social-link"><img src="images/whatsapp.svg" alt="social__image" class="footer__social-img"></a>
-                        </li>
-                        <li class="footer__social-item">
-                            <a href="https://vk.com/elli_sol" class="footer__social-link"><img src="images/vk.svg" alt="social__image" class="footer__social-img"></a>
-                        </li>
-                        <li class="footer__social-item">
-                            <a href="https://www.facebook.com/elina.khoshabova" class="footer__social-link"><img src="images/facebook.svg" alt="social__image" class="footer__social-img"></a>
-                        </li>
-                        <li class="footer__social-item">
-                            <a href="https://www.instagram.com/slli_soll/" class="footer__social-link"><img src="images/instagram.svg" alt="social__image" class="footer__social-img"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="gallery">
+          <figure class="reveal"><img src="images/slides/slide5.jpg" alt="Атмосфера салона"><figcaption>Пространство</figcaption></figure>
+          <figure class="reveal"><img src="images/slides/slider1.jpg" alt="Образ и стиль"><figcaption>Стиль</figcaption></figure>
+          <figure class="reveal"><img src="images/slides/slider2.jpg" alt="Детали образа"><figcaption>Детали</figcaption></figure>
+          <figure class="reveal"><img src="images/slides/slider3.jpg" alt="Работа мастера"><figcaption>Работа мастера</figcaption></figure>
+          <figure class="reveal"><img src="images/slides/slider4.jpg" alt="Красота в деталях"><figcaption>Настроение</figcaption></figure>
         </div>
-    </footer>
+      </div>
+    </section>
+
+    <section class="section shell" id="masters">
+      <div class="masters-grid">
+        <div class="masters-photo reveal"><img src="images/header%20image/henry-co-a2VJlQ3yxmQ-unsplash.jpg" alt="Профессиональный подход к созданию образа"></div>
+        <div class="masters-text reveal">
+          <div class="eyebrow">Люди и мастерство</div>
+          <h2>Внимание —<br><em class="serif">в каждой детали.</em></h2>
+          <p>За каждым образом стоит диалог. Мы не навязываем тренды, а помогаем найти то, что подходит именно вам — с учётом характера, образа жизни и желания перемен.</p>
+          <div class="masters-caption">Индивидуальный подход · Спокойная атмосфера</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacts">
+      <div class="shell contact-inner">
+        <div class="reveal">
+          <div class="eyebrow">Будем знакомы</div>
+          <h2>Загляни<br><em>к нам.</em></h2>
+          <p>Есть вопрос или хотите уточнить услугу? Свяжитесь с нами удобным способом — мы добавим актуальные контакты и адрес после подтверждения данных.</p>
+          <a class="round-link" href="mailto:">Написать нам <span>↗</span></a>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-row"><span>Запись</span><span>Скоро появится</span></div>
+          <div class="contact-row"><span>Адрес</span><span>Уточняется</span></div>
+          <div class="contact-row"><span>График</span><span>Уточняется</span></div>
+          <p class="contact-hint">Контактные данные будут добавлены после согласования</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div class="footer-brand">Я С ТОБОЙ</div>
+      <div class="footer-note">Пространство красоты · © <span id="year"></span></div>
+      <a class="back-top" href="#">Наверх ↑</a>
     </div>
-
-
-    <script src="js/main.min.js"></script>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const opened = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(opened));
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
-
 </html>
