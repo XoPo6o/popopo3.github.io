@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
     :root{--paper:#f4f0e9;--cream:#e9e1d5;--ink:#282722;--muted:#77736b;--line:rgba(40,39,34,.17);--accent:#9b8064;--white:#fffdfa;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;width:100%;object-fit:cover}button{font:inherit}.shell{width:min(1240px,calc(100% - 64px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700}.serif{font-family:var(--serif);font-weight:400}.section{padding:112px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}.section-head h2{font:400 clamp(42px,6vw,76px)/.98 var(--serif);letter-spacing:-.045em;margin:14px 0 0}.section-head p{max-width:310px;color:var(--muted);font-size:13px;line-height:1.8;margin:0 0 5px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.skip-link{position:fixed;z-index:20;top:8px;left:8px;padding:12px 16px;background:var(--ink);color:var(--paper);transform:translateY(-160%);transition:transform .2s}.skip-link:focus{transform:translateY(0)}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;width:100%;object-fit:cover}button{font:inherit}.shell{width:min(1240px,calc(100% - 64px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700}.serif{font-family:var(--serif);font-weight:400}.section{padding:112px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px}.section-head h2{font:400 clamp(42px,6vw,76px)/.98 var(--serif);letter-spacing:-.045em;margin:14px 0 0}.section-head p{max-width:310px;color:var(--muted);font-size:13px;line-height:1.8;margin:0 0 5px}
     .topline{height:34px;background:var(--ink);color:#e9e1d5;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
     header{position:relative;z-index:5}.nav{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.nav-links{display:flex;gap:32px;align-items:center}.nav-links a,.nav-cta{font-size:11px;letter-spacing:.08em;text-transform:uppercase}.nav-links a{color:#5e5a53;transition:color .25s}.nav-links a:hover{color:var(--accent)}.brand{position:absolute;left:50%;transform:translateX(-50%);text-align:center;white-space:nowrap}.brand-name{font:500 25px/.9 var(--serif);letter-spacing:.13em}.brand-sub{font-size:8px;letter-spacing:.32em;text-transform:uppercase;margin-top:7px;color:var(--muted)}.nav-cta{border:1px solid var(--ink);padding:13px 18px;transition:.25s}.nav-cta:hover{background:var(--ink);color:var(--paper)}.menu-toggle{display:none;border:0;background:none;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
     .hero{min-height:690px;display:grid;grid-template-columns: .92fr 1.08fr;align-items:center;gap:4vw;padding:54px 0 70px}.hero-copy{padding:24px 0 24px 5.5vw;position:relative;z-index:1}.hero-kicker{display:flex;align-items:center;gap:13px;margin-bottom:26px}.hero-kicker:before{content:"";width:36px;height:1px;background:var(--accent)}.hero h1{font:400 clamp(58px,7vw,100px)/.91 var(--serif);letter-spacing:-.055em;margin:0;max-width:600px}.hero h1 em{font-weight:400;color:var(--accent)}.hero-desc{max-width:330px;color:var(--muted);font-size:14px;line-height:1.9;margin:30px 0}.round-link{display:inline-flex;align-items:center;gap:18px;font-size:10px;text-transform:uppercase;letter-spacing:.16em;border-bottom:1px solid var(--accent);padding:0 0 12px}.round-link span{font-size:19px;transition:transform .25s}.round-link:hover span{transform:translateX(6px)}.hero-note{margin-top:70px;font:italic 14px var(--serif);color:var(--muted)}.hero-visual{height:590px;position:relative;margin-right:2vw}.hero-photo{height:100%;width:100%;object-fit:cover;object-position:center 36%;}.hero-frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(155,128,100,.65);pointer-events:none}.hero-stamp{position:absolute;bottom:35px;left:-40px;width:116px;height:116px;border-radius:50%;background:var(--accent);color:var(--white);display:grid;place-items:center;text-align:center;font:italic 17px/1.15 var(--serif);transform:rotate(-10deg);padding:20px}
@@ -29,20 +29,21 @@
   </style>
 </head>
 <body>
-  <div class="topline">Пространство, где красота начинается с внимания к себе</div>
+  <div class="topline" id="top">Пространство, где красота начинается с внимания к себе</div>
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
   <header>
     <div class="shell nav">
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Меню</button>
       <nav class="nav-links" id="main-menu" aria-label="Основная навигация">
         <a href="#about">О нас</a><a href="#services">Услуги</a><a href="#works">Работы</a>
       </nav>
-      <a class="brand" href="#" aria-label="Я с тобой — на главную"><div class="brand-name">Я С ТОБОЙ</div><div class="brand-sub">пространство красоты</div></a>
+      <a class="brand" href="#top" aria-label="Я с тобой — на главную"><div class="brand-name">Я С ТОБОЙ</div><div class="brand-sub">пространство красоты</div></a>
       <a class="nav-cta" href="#contacts">Связаться <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
   <main>
-    <section class="shell hero">
+    <section class="shell hero" id="main-content">
       <div class="hero-copy">
         <div class="hero-kicker eyebrow">Красота в твоём ритме</div>
         <h1>Быть собой —<br><em>это красиво.</em></h1>
@@ -51,7 +52,7 @@
         <div class="hero-note">«Красота — в деталях. Уверенность — в ощущениях».</div>
       </div>
       <div class="hero-visual">
-        <img class="hero-photo" src="images/header%20image/logan-weaver-DwiHf5nS_fQ-unsplash.jpg" alt="Атмосферный образ и работа стилиста">
+        <img class="hero-photo" src="images/header%20image/logan-weaver-DwiHf5nS_fQ-unsplash.jpg" alt="Атмосферный образ и работа стилиста" fetchpriority="high">
         <div class="hero-frame"></div><div class="hero-stamp">время<br>для себя</div>
         <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i>
       </div>
@@ -75,10 +76,10 @@
         <p>Подбираем решения под ваш стиль, привычки и пожелания. Подробности и стоимость можно уточнить перед визитом.</p>
       </div>
       <div class="services-grid">
-        <a class="service-card reveal" href="#contacts"><img src="images/WoomanCut.png" alt="Женская стрижка"><div class="service-info"><small>Форма и характер</small><h3>Женские стрижки</h3><span>Подробнее ↗</span></div></a>
-        <a class="service-card reveal" href="#contacts"><img src="images/MenCut.png" alt="Мужская стрижка"><div class="service-info"><small>Точность в деталях</small><h3>Мужские стрижки</h3><span>Подробнее ↗</span></div></a>
-        <a class="service-card reveal" href="#contacts"><img src="images/HairStyles.png" alt="Укладка волос"><div class="service-info"><small>Образ для момента</small><h3>Укладки</h3><span>Подробнее ↗</span></div></a>
-        <a class="service-card reveal" href="#contacts"><img src="images/Nails.png" alt="Уход за руками"><div class="service-info"><small>Аккуратный акцент</small><h3>Уход за руками</h3><span>Подробнее ↗</span></div></a>
+        <article class="service-card reveal"><img loading="lazy" decoding="async" src="images/WoomanCut.png" alt="Женская стрижка"><div class="service-info"><small>Форма и характер</small><h3>Женские стрижки</h3><span>Подробнее ↗</span></div></article>
+        <a class="service-card reveal" href="#contacts"><img loading="lazy" decoding="async" src="images/MenCut.png" alt="Мужская стрижка"><div class="service-info"><small>Точность в деталях</small><h3>Мужские стрижки</h3><span>Подробнее ↗</span></div></a>
+        <a class="service-card reveal" href="#contacts"><img loading="lazy" decoding="async" src="images/HairStyles.png" alt="Укладка волос"><div class="service-info"><small>Образ для момента</small><h3>Укладки</h3><span>Подробнее ↗</span></div></a>
+        <a class="service-card reveal" href="#contacts"><img loading="lazy" decoding="async" src="images/Nails.png" alt="Уход за руками"><div class="service-info"><small>Аккуратный акцент</small><h3>Уход за руками</h3><span>Подробнее ↗</span></div></a>
       </div>
     </section>
 
@@ -95,7 +96,7 @@
           <p>Немного красоты, фактур и настроения. Галерею работ можно будет пополнять новыми фотографиями.</p>
         </div>
         <div class="gallery">
-          <figure class="reveal"><img src="images/slides/slide5.jpg" alt="Атмосфера салона"><figcaption>Пространство</figcaption></figure>
+          <figure class="reveal"><img loading="lazy" decoding="async" src="images/slides/slide5.jpg" alt="Атмосфера салона"><figcaption>Пространство</figcaption></figure>
           <figure class="reveal"><img src="images/slides/slider1.jpg" alt="Образ и стиль"><figcaption>Стиль</figcaption></figure>
           <figure class="reveal"><img src="images/slides/slider2.jpg" alt="Детали образа"><figcaption>Детали</figcaption></figure>
           <figure class="reveal"><img src="images/slides/slider3.jpg" alt="Работа мастера"><figcaption>Работа мастера</figcaption></figure>
@@ -106,7 +107,7 @@
 
     <section class="section shell" id="masters">
       <div class="masters-grid">
-        <div class="masters-photo reveal"><img src="images/header%20image/henry-co-a2VJlQ3yxmQ-unsplash.jpg" alt="Профессиональный подход к созданию образа"></div>
+        <div class="masters-photo reveal"><img loading="lazy" decoding="async" src="images/header%20image/henry-co-a2VJlQ3yxmQ-unsplash.jpg" alt="Профессиональный подход к созданию образа"></div>
         <div class="masters-text reveal">
           <div class="eyebrow">Люди и мастерство</div>
           <h2>Внимание —<br><em class="serif">в каждой детали.</em></h2>
@@ -138,7 +139,7 @@
     <div class="shell footer-inner">
       <div class="footer-brand">Я С ТОБОЙ</div>
       <div class="footer-note">Пространство красоты · © <span id="year"></span></div>
-      <a class="back-top" href="#">Наверх ↑</a>
+      <a class="back-top" href="#top">Наверх ↑</a>
     </div>
   </footer>
   <script>
@@ -152,6 +153,13 @@
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     }));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
     document.getElementById('year').textContent = new Date().getFullYear();
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
