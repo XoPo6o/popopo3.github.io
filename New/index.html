@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101713">
+<meta name="description" content="Я с Тобой — парикмахерская и пространство красоты в Краснодаре. Стрижки, укладки и уход.">
+<title>Я с Тобой — пространство красоты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101713;--panel:#18231c;--panel2:#202d24;--ink:#f1f0e8;--muted:#a5afa4;--green:#b5d7a5;--green2:#789b72;--line:rgba(221,235,215,.17);--sans:'Manrope',sans-serif;--serif:'Playfair Display',Georgia,serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}button{font:inherit}.wrap{width:min(1180px,calc(100% - 56px));margin:auto}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}.muted{color:var(--muted)}
+.top{border-bottom:1px solid var(--line);color:var(--muted);font-size:9px;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:10px 15px}
+header{position:sticky;top:0;z-index:10;background:rgba(16,23,19,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font:600 24px var(--serif);letter-spacing:.02em}.brand span{color:var(--green)}.links{display:flex;gap:30px}.links a{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d4dbd1}.links a:hover{color:var(--green)}.cta{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#152017;padding:14px 20px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:.2s}.cta:hover{background:#d1e7c7;transform:translateY(-2px)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:10px 12px}
+.hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:7vw;align-items:center;padding:90px 0 100px;min-height:650px}.hero h1{font:500 clamp(64px,8.4vw,112px)/.94 var(--serif);letter-spacing:-.055em;margin:24px 0}.hero h1 em{font-style:italic;color:var(--green)}.hero p{max-width:420px;color:var(--muted);font-size:14px;line-height:2;margin:0 0 30px}.hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.quiet-link{font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;border-bottom:1px solid var(--green);padding:0 0 7px}.hero-visual{height:510px;position:relative;padding:0 30px 30px 0}.hero-visual:before{content:"";position:absolute;inset:30px 0 0 30px;border:1px solid var(--green2)}.hero-visual img{position:relative;z-index:1;object-position:center 30%;filter:saturate(.72);}.visual-note{position:absolute;z-index:2;left:-22px;bottom:0;background:var(--green);color:#152017;padding:16px 20px;font:italic 20px var(--serif)}.visual-index{position:absolute;right:0;top:0;color:var(--green);font:500 12px var(--sans);letter-spacing:.18em;writing-mode:vertical-rl}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:17px 0;color:var(--green);font:italic 19px var(--serif);white-space:nowrap}.marquee span{padding:0 28px}
+.section{padding:105px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.section-head h2{font:500 clamp(42px,6vw,72px)/1 var(--serif);letter-spacing:-.04em;margin:12px 0 0}.section-head h2 em{color:var(--green)}.section-head p{max-width:360px;color:var(--muted);font-size:13px;line-height:1.9;margin:0}
+.about{background:var(--panel)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:9vw;align-items:center}.about-art{height:390px;position:relative;background:var(--panel2);padding:18px}.about-art:before{content:"";position:absolute;inset:35px;border:1px solid var(--green2)}.about-art img{position:relative;z-index:1;object-position:center 28%;filter:saturate(.65)}.about-copy h3{font:500 clamp(38px,5vw,62px)/1.06 var(--serif);margin:18px 0 22px}.about-copy h3 em{color:var(--green)}.about-copy p{font-size:13px;line-height:2;color:var(--muted);max-width:500px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.service{background:var(--panel);border:1px solid var(--line);overflow:hidden}.service-photo{height:245px;overflow:hidden}.service-photo img{transition:transform .6s;filter:saturate(.72)}.service:hover img{transform:scale(1.045)}.service-copy{padding:20px}.service-no{color:var(--green);font-size:10px;letter-spacing:.16em}.service h3{font:500 23px var(--serif);margin:10px 0 4px}.service p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}
+.quote{background:var(--green);color:#172119;padding:90px 0;text-align:center}.quote blockquote{max-width:900px;margin:0 auto;font:500 clamp(38px,6vw,72px)/1.08 var(--serif)}.quote blockquote em{font-style:italic}
+.gallery{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:210px 210px;gap:12px}.gallery figure{margin:0;overflow:hidden;background:var(--panel)}.gallery figure:first-child{grid-row:span 2}.gallery img{filter:saturate(.7);transition:transform .6s}.gallery figure:hover img{transform:scale(1.04)}.gallery figcaption{padding:9px 12px;background:var(--panel);color:var(--green);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.contact{background:var(--panel);border-top:1px solid var(--line)}.contact-grid{display:grid;grid-template-columns:1fr .85fr;gap:8vw;align-items:center}.contact h2{font:500 clamp(55px,8vw,92px)/.95 var(--serif);margin:18px 0}.contact h2 em{color:var(--green)}.contact-intro{max-width:400px;color:var(--muted);font-size:13px;line-height:1.9;margin-bottom:28px}.contact-card{border:1px solid var(--line);padding:28px 30px;background:var(--bg)}.contact-card h3{font:500 25px var(--serif);margin:0 0 18px;padding-bottom:16px;border-bottom:1px solid var(--line)}.contact-row{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}.contact-row:last-child{border:0}.contact-row span:first-child{color:var(--muted)}.contact-row a{color:var(--green);font-weight:700}
+footer{padding:28px 0;border-top:1px solid var(--line)}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font:500 22px var(--serif)}.footer-note{font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:850px){.hero{gap:35px}.hero-visual{height:420px}.services{grid-template-columns:repeat(2,1fr)}.service-photo{height:260px}.gallery{grid-template-rows:180px 180px}.links{gap:17px}}
+@media(max-width:620px){.wrap{width:calc(100% - 36px)}.nav{height:68px}.brand{font-size:22px}.menu{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;padding:22px 20px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;gap:20px}.links.open{display:flex}.nav>.cta{padding:11px 12px;font-size:9px}.hero{display:flex;flex-direction:column;align-items:stretch;padding:55px 0 65px;gap:40px}.hero h1{font-size:clamp(66px,16vw,90px)}.hero-visual{height:360px;margin-left:18px}.section{padding:75px 0}.section-head{display:block}.section-head p{margin-top:18px}.about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}.about-art{height:310px}.services{gap:9px}.service-photo{height:190px}.service-copy{padding:14px}.service h3{font-size:19px}.service p{font-size:10px}.quote{padding:70px 0}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:230px 145px 145px;gap:8px}.gallery figure:first-child{grid-row:span 2}.gallery figure:last-child{grid-column:span 2}.contact-card{padding:22px 17px}.contact-row{grid-template-columns:75px 1fr;font-size:11px}.footer{flex-direction:column;text-align:center}.footer-note{line-height:1.8}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top">Краснодар · Пространство красоты · Индивидуальность вне времени</div>
+<header><div class="wrap nav">
+<a class="brand" href="#top">Я с <span>Тобой</span></a>
+<button class="menu" aria-expanded="false" aria-controls="navlinks">Меню</button>
+<nav class="links" id="navlinks"><a href="#about">О нас</a><a href="#services">Услуги</a><a href="#works">Галерея</a><a href="#contacts">Контакты</a></nav>
+<a class="cta" href="#contacts">Записаться ↗</a>
+</div></header>
+<main id="top">
+<section class="wrap hero">
+<div><div class="eyebrow">Тихая эстетика · Личный подход</div><h1>Красота<br>в своём <em>ритме.</em></h1><p>Место, где можно выдохнуть, довериться мастеру и найти образ, который действительно вам подходит. Без суеты — с вниманием к каждой детали.</p><div class="hero-actions"><a class="cta" href="#contacts">Найти нас ↗</a><a class="quiet-link" href="#services">Наши услуги</a></div></div>
+<div class="hero-visual"><img src="../images/header__img.png" alt="Атмосферный портрет для парикмахерской"><div class="visual-note">Будь собой.</div><div class="visual-index">01 / BEAUTY SPACE</div></div>
+</section>
+<div class="marquee"><span>Форма · Характер · Забота · Стиль · Форма · Характер · Забота · Стиль ·</span><span aria-hidden="true">Форма · Характер · Забота · Стиль · Форма · Характер · Забота · Стиль ·</span></div>
+<section class="section about" id="about"><div class="wrap about-grid">
+<div class="about-art"><img src="../images/slider__haistyles.jpg" alt="Работа парикмахера и выразительный образ"></div>
+<div class="about-copy"><div class="eyebrow">01 / О пространстве</div><h3>Ваш стиль.<br><em>Ваш характер.</em><br>Наше внимание.</h3><p>Мы начинаем с разговора: слушаем, уточняем пожелания и вместе выбираем решение. Для нас важно не просто сделать стрижку, а создать образ, с которым вам комфортно каждый день.</p><p>Спокойная атмосфера, бережный подход и уважение к вашей индивидуальности.</p></div>
+</div></section>
+<section class="section wrap" id="services"><div class="section-head"><div><div class="eyebrow">02 / Что мы делаем</div><h2>Услуги <em>пространства</em></h2></div><p>Подбираем форму и уход под ваши пожелания. Стоимость и детали можно уточнить по телефону.</p></div>
+<div class="services">
+<article class="service"><div class="service-photo"><img src="../images/services__womencut.png" alt="Женская стрижка"></div><div class="service-copy"><span class="service-no">01 / ФОРМА</span><h3>Женские стрижки</h3><p>Образ, который подчёркивает индивидуальность.</p></div></article>
+<article class="service"><div class="service-photo"><img src="../images/services__mencut.png" alt="Мужская стрижка"></div><div class="service-copy"><span class="service-no">02 / ТОЧНОСТЬ</span><h3>Мужские стрижки</h3><p>Чистые линии и внимание к деталям.</p></div></article>
+<article class="service"><div class="service-photo"><img src="../images/services__hairstyles.png" alt="Укладка волос"></div><div class="service-copy"><span class="service-no">03 / НАСТРОЕНИЕ</span><h3>Укладки</h3><p>Завершённый образ для любого повода.</p></div></article>
+<article class="service"><div class="service-photo"><img src="../images/services__nail.png" alt="Уход за руками"></div><div class="service-copy"><span class="service-no">04 / ЗАБОТА</span><h3>Уход за руками</h3><p>Аккуратность и приятные мелочи.</p></div></article>
+</div></section>
+<section class="quote"><div class="wrap"><div class="eyebrow" style="color:#243528">03 / Наш принцип</div><blockquote>«Настоящий стиль — это <em>чувствовать себя собой.</em>»</blockquote></div></section>
+<section class="section wrap" id="works"><div class="section-head"><div><div class="eyebrow">04 / Вдохновение</div><h2>Галерея <em>образов</em></h2></div><p>Немного атмосферы, фактур и деталей, которые складываются в настроение.</p></div>
+<div class="gallery">
+<figure><img src="../images/slider__womancut.jpg" alt="Женский образ и укладка"><figcaption>Женский образ</figcaption></figure>
+<figure><img src="../images/slider__mencut.jpg" alt="Мужская стрижка"><figcaption>Мужской стиль</figcaption></figure>
+<figure><img src="../images/slider__haistyles.jpg" alt="Укладка волос"><figcaption>Форма и фактура</figcaption></figure>
+</div></section>
+<section class="section contact" id="contacts"><div class="wrap contact-grid">
+<div><div class="eyebrow">05 / Будем знакомы</div><h2>До встречи<br><em>у нас.</em></h2><p class="contact-intro">Позвоните, чтобы уточнить детали и договориться о визите. Будем рады видеть вас.</p><a class="cta" href="https://www.google.com/maps/dir/?api=1&destination=ул.+Гагарина,+132,+Краснодар" target="_blank" rel="noopener">Построить маршрут ↗</a></div>
+<div class="contact-card"><h3>Я с Тобой / Контакты</h3><div class="contact-row"><span>Адрес</span><a href="https://www.google.com/maps/dir/?api=1&destination=ул.+Гагарина,+132,+Краснодар" target="_blank" rel="noopener">ул. Гагарина, 132, Краснодар ↗</a></div><div class="contact-row"><span>Телефон</span><div><a href="tel:+79182529384">+7 (918) 252-93-84</a><br><a href="tel:+79180157571">+7 (918) 015-75-71</a></div></div></div>
+</div></section>
+</main>
+<footer><div class="wrap footer"><div class="footer-brand">Я с Тобой</div><div class="footer-note">Парикмахерская · Краснодар · © <span id="year"></span></div><a class="quiet-link" href="#top">Наверх ↑</a></div></footer>
+<script>
+const menuButton=document.querySelector('.menu'),nav=document.querySelector('.links');
+menuButton.addEventListener('click',()=>{const opened=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(opened));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
