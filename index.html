@@ -64,11 +64,11 @@
     .hero-bottom{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
     .hero-index{font:500 12px var(--display);letter-spacing:.12em}
     .hero-art{height:550px;position:relative;isolation:isolate}
-    .hero-photo{position:absolute;inset:58px 45px 35px 100px;width:calc(100% - 145px);height:calc(100% - 93px);border:7px solid var(--ink);z-index:1;filter:grayscale(100%) contrast(1.08)}
+    .hero-photo{position:absolute;inset:58px 45px 35px 100px;width:calc(100% - 145px);height:calc(100% - 93px);border:7px solid var(--ink);z-index:1;filter:none}
     .hero-photo img{object-position:center 34%}
     .art-circle{position:absolute;width:210px;height:210px;border-radius:50%;background:var(--yellow);top:0;right:0;z-index:0}
     .art-circle:after{content:"";position:absolute;width:90px;height:90px;border:12px solid var(--red);border-radius:50%;left:58px;top:52px}
-    .art-bar{position:absolute;width:330px;height:34px;background:var(--blue);transform:rotate(-43deg);left:-20px;bottom:92px;z-index:3;border:2px solid var(--ink)}
+    .art-bar{display:none}
     .art-triangle{position:absolute;right:0;bottom:14px;width:0;height:0;border-left:90px solid transparent;border-right:0 solid transparent;border-bottom:145px solid var(--red);z-index:2}
     .art-caption{position:absolute;right:7px;top:230px;writing-mode:vertical-rl;font:500 12px var(--display);letter-spacing:.16em;text-transform:uppercase;z-index:4}
     .art-number{position:absolute;left:5px;top:36px;font:600 72px/.8 var(--display);color:var(--red);z-index:3}
@@ -100,8 +100,8 @@
     .signature:before{content:"";width:45px;height:3px;background:var(--red)}
     .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
     .service{min-height:345px;position:relative;background:var(--ink);color:white;overflow:hidden;border:2px solid var(--ink)}
-    .service img{position:absolute;inset:0;opacity:.68;filter:grayscale(100%);transition:transform .7s,filter .7s}
-    .service:hover img{transform:scale(1.06);filter:grayscale(0%);opacity:.82}
+    .service img{position:absolute;inset:0;opacity:.78;filter:none;transition:transform .7s,filter .7s}
+    .service:hover img{transform:scale(1.06);filter:none;opacity:.9}
     .service:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.88))}
     .service-index{position:absolute;top:14px;left:14px;z-index:2;background:var(--yellow);color:var(--ink);padding:7px 10px;font:600 17px var(--display)}
     .service-shape{position:absolute;top:20px;right:18px;width:42px;height:42px;border:3px solid var(--red);border-radius:50%;z-index:2}
@@ -122,8 +122,8 @@
     .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:235px 235px;gap:13px}
     .gallery figure{margin:0;position:relative;overflow:hidden;background:var(--ink);border:2px solid var(--ink)}
     .gallery figure:first-child{grid-row:span 2}
-    .gallery img{filter:grayscale(100%);transition:transform .7s,filter .7s}
-    .gallery figure:hover img{transform:scale(1.045);filter:grayscale(0%)}
+    .gallery img{filter:none;transition:transform .7s,filter .7s}
+    .gallery figure:hover img{transform:scale(1.045);filter:none}
     .gallery figcaption{position:absolute;left:0;bottom:0;background:var(--yellow);color:var(--ink);padding:9px 12px;font:500 13px var(--display);letter-spacing:.08em;text-transform:uppercase}
     .gallery figure:nth-child(2) figcaption{background:var(--red);color:white}
     .gallery figure:nth-child(3) figcaption{background:var(--blue);color:white}
@@ -195,7 +195,7 @@
       <div class="hero-art" aria-label="Абстрактная композиция в духе авангарда">
         <div class="art-circle"></div>
         <div class="art-number">01</div>
-        <div class="hero-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Young_woman_with_a_1960s-style_haircut_%281541848%29.jpg" alt="Портрет девушки с выразительной причёской 1960-х годов" fetchpriority="high"></div>
+        <div class="hero-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Claudia_Mori%2C_c._1960.jpg" alt="Портрет девушки с выразительной причёской 1960-х годов" fetchpriority="high"></div>
         <div class="art-bar"></div><div class="art-triangle"></div>
         <div class="art-caption">Форма · цвет · характер</div>
         <div class="hero-sticker">Будь<br>собой!</div>
@@ -225,9 +225,9 @@
         <p>Подбираем решения под ваш стиль, привычки и пожелания. Стоимость и детали услуг можно уточнить перед визитом.</p>
       </div>
       <div class="services-grid">
-        <article class="service reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Young_woman_with_a_1960s-style_haircut_%281541847%29.jpg" alt="Женская стрижка"><span class="service-index">01</span><span class="service-shape"></span><div class="service-copy"><small>Форма и характер</small><h3>Женские стрижки</h3></div></article>
-        <article class="service reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/At_a_barber%27s._Tbilisi%2C_Georgia._Viktor_Yershov._1971.jpg" alt="Мужская стрижка в советской парикмахерской, Тбилиси, 1971 год"><span class="service-index">02</span><span class="service-shape"></span><div class="service-copy"><small>Точность в деталях</small><h3>Мужские стрижки</h3></div></article>
-        <article class="service reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Young_woman_with_a_1960s-style_haircut_%281541844%29.jpg" alt="Женская причёска в стиле 1960-х годов"><span class="service-index">03</span><span class="service-shape"></span><div class="service-copy"><small>Образ для момента</small><h3>Укладки</h3></div></article>
+        <article class="service reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Dalida_publicity_photo_1960s.jpg" alt="Женский образ с объёмной причёской 1960-х годов"><span class="service-index">01</span><span class="service-shape"></span><div class="service-copy"><small>Форма и характер</small><h3>Женские стрижки</h3></div></article>
+        <article class="service reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/1960s_Inter_Milan_-_Luis_Su%C3%A1rez_Miramontes.jpg" alt="Мужской образ и аккуратная классическая причёска 1960-х годов"><span class="service-index">02</span><span class="service-shape"></span><div class="service-copy"><small>Точность в деталях</small><h3>Мужские стрижки</h3></div></article>
+        <article class="service reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Hammond_Slides_Fashionable_Women.jpg" alt="Модные женские укладки Москвы 1964 года"><span class="service-index">03</span><span class="service-shape"></span><div class="service-copy"><small>Образ для момента</small><h3>Укладки</h3></div></article>
         <article class="service reveal"><img loading="lazy" decoding="async" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Manicure%2C_headscarf%2C_newspaper%2C_light_Fortepan_84664.jpg/1280px-Manicure%2C_headscarf%2C_newspaper%2C_light_Fortepan_84664.jpg" alt="Маникюр в 1961 году: мастер работает с руками клиента"><span class="service-index">04</span><span class="service-shape"></span><div class="service-copy"><small>Аккуратный акцент</small><h3>Уход за руками</h3></div></article>
       </div>
       <div class="service-foot"><span>Индивидуальный подход к каждому образу</span><strong>Подробности — по телефону ↗</strong></div>
@@ -250,10 +250,10 @@
         </div>
         <div class="gallery">
           <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/0/02/28th_hair_dressing_shop_on_Kutuzovsky_Prospekt.jpg" alt="Атмосфера парикмахерской"><figcaption>Пространство</figcaption></figure>
-          <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Hammond_Slides_Fashionable_Women.jpg" alt="Модные женские образы Москвы 1964 года"><figcaption>Стиль</figcaption></figure>
-          <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/1967_hairstyle.jpg" alt="Женская причёска 1967 года"><figcaption>Причёска</figcaption></figure>
+          <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Dalida_publicity_photo_1960s.jpg" alt="Архивный журнальный портрет с выразительной причёской 1960-х"><figcaption>Стиль</figcaption></figure>
+          <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Claudia_Mori%2C_c._1960.jpg" alt="Женская причёска 1967 года"><figcaption>Причёска</figcaption></figure>
           <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/d/de/History_of_hairdressing_salons_in_Moscow_03.jpg" alt="Работа мастера"><figcaption>Мастерство</figcaption></figure>
-          <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/2/28/June_1830_hairstyles.jpg" alt="Архивные журнальные эскизы причёсок"><figcaption>Архив</figcaption></figure>
+          <figure class="reveal"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Hairdresser%2C_hair_dryer_Fortepan_84472.jpg" alt="Женский зал парикмахерской с сушуарами, 1960 год"><figcaption>Архив</figcaption></figure>
         </div>
       </div>
     </section>
@@ -295,7 +295,7 @@
   <footer>
     <div class="wrap footer-inner">
       <div class="footer-brand">Я С ТОБОЙ</div>
-      <div class="footer-note">Парикмахерская · Краснодар · © <span id="year"></span><br><span>Архив: <a href="https://commons.wikimedia.org/wiki/File:28th_hair_dressing_shop_on_Kutuzovsky_Prospekt.jpg" target="_blank" rel="noopener">Главархив Москвы, CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Young_woman_with_a_1960s-style_haircut_(1541847).jpg" target="_blank" rel="noopener">Geoff Charles, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Young_woman_with_a_1960s-style_haircut_(1541848).jpg" target="_blank" rel="noopener">Geoff Charles, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Young_woman_with_a_1960s-style_haircut_(1541844).jpg" target="_blank" rel="noopener">Geoff Charles, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:At_a_barber%27s._Tbilisi,_Georgia._Viktor_Yershov._1971.jpg" target="_blank" rel="noopener">Виктор Ершов, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Manicure,_headscarf,_newspaper,_light_Fortepan_84664.jpg" target="_blank" rel="noopener">Fortepan / Magyar Hírek, CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:History_of_hairdressing_salons_in_Moscow_03.jpg" target="_blank" rel="noopener">Главархив Москвы, CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Hammond_Slides_Fashionable_Women.jpg" target="_blank" rel="noopener">Thomas T. Hammond, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:1967_hairstyle.jpg" target="_blank" rel="noopener">Jeanne Boleyn, Public Domain</a> · <a href="https://commons.wikimedia.org/wiki/File:June_1830_hairstyles.jpg" target="_blank" rel="noopener">Fashion plate, Public Domain</a></span></div>
+      <div class="footer-note">Парикмахерская · Краснодар · © <span id="year"></span><br><span>Архив: <a href="https://commons.wikimedia.org/wiki/File:Claudia_Mori,_c._1960.jpg" target="_blank" rel="noopener">Claudia Mori, журнальная фотография, Public Domain</a> · <a href="https://commons.wikimedia.org/wiki/File:Dalida_publicity_photo_1960s.jpg" target="_blank" rel="noopener">Dalida, архивное фото, Public Domain</a> · <a href="https://commons.wikimedia.org/wiki/File:1960s_Inter_Milan_-_Luis_Su%C3%A1rez_Miramontes.jpg" target="_blank" rel="noopener">Luis Suárez Miramontes, архивное фото, Public Domain</a> · <a href="https://commons.wikimedia.org/wiki/File:Hairdresser,_hair_dryer_Fortepan_84472.jpg" target="_blank" rel="noopener">FOTO:Fortepan / Morvay Kinga, CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:28th_hair_dressing_shop_on_Kutuzovsky_Prospekt.jpg" target="_blank" rel="noopener">Главархив Москвы, CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Young_woman_with_a_1960s-style_haircut_(1541847).jpg" target="_blank" rel="noopener">Geoff Charles, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Young_woman_with_a_1960s-style_haircut_(1541848).jpg" target="_blank" rel="noopener">Geoff Charles, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Young_woman_with_a_1960s-style_haircut_(1541844).jpg" target="_blank" rel="noopener">Geoff Charles, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:At_a_barber%27s._Tbilisi,_Georgia._Viktor_Yershov._1971.jpg" target="_blank" rel="noopener">Виктор Ершов, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Manicure,_headscarf,_newspaper,_light_Fortepan_84664.jpg" target="_blank" rel="noopener">Fortepan / Magyar Hírek, CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:History_of_hairdressing_salons_in_Moscow_03.jpg" target="_blank" rel="noopener">Главархив Москвы, CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Hammond_Slides_Fashionable_Women.jpg" target="_blank" rel="noopener">Thomas T. Hammond, CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:1967_hairstyle.jpg" target="_blank" rel="noopener">Jeanne Boleyn, Public Domain</a> · <a href="https://commons.wikimedia.org/wiki/File:June_1830_hairstyles.jpg" target="_blank" rel="noopener">Fashion plate, Public Domain</a></span></div>
       <a class="backtop" href="#top">Наверх ↑</a>
     </div>
   </footer>
